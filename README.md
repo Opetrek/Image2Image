@@ -21,7 +21,14 @@
 ![Пример результата модели](https://github.com/Opetrek/Image2Image/blob/main/screens/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%20SM.png)
 
 Установку Stability Matrix рекомендуется проводить по умолчанию, без всяких изменений в расположении файла.
-После установки
+После установки, открыть Stability Matrix и откроется вкладка с такой моделью: 
+
+![Пример результата модели](https://github.com/Opetrek/Image2Image/blob/main/screens/Установка%20Stable%20Duffision%20ч.1.png)
+
+Необходимо дальше добавить необходимую модель, внизу находится кнопка "Add package"/ "Добавить пакет". Для дальнейшей работы необходимо установить Stable Diffusion WebUI от Automatic 1111.
+
+![Пример результата модели](https://github.com/Opetrek/Image2Image/blob/main/screens/Установка%20SD%202.1.png)
+
 
 ## Руководство пользователя
 
