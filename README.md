@@ -111,6 +111,8 @@ fidan.save('fidan.png')
 ```
 Что подавалось на вход в текущем примере
 ![Пример результата модели](https://github.com/Opetrek/Image2Image/blob/main/screens/Запуск%20SD%20дистанционно%20ч1.jpg)
+
 И что сгенерировал Stable Diffusion
+
 ![Пример результата модели](https://github.com/Opetrek/Image2Image/blob/main/screens/Запуск%20SD%20дистанц%20ч2.png)
 
