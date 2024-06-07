@@ -30,7 +30,20 @@
 ![Пример результата модели](https://github.com/Opetrek/Image2Image/blob/main/screens/Установка%20SD%202.1.png)
 
 
-## Руководство пользователя
+## Руководство по Stable Diffusion
 
+После установки Stable Diffusion, открываем его через Stability Matrix, и откроется главное окно:
+
+![Пример результата модели](https://github.com/Opetrek/Image2Image/blob/main/screens/Настройка%20SD%20ч1.png)
+
+Изначально блок ControlNet будет отсутствовать в установленной программе. Для её установки требуется перейти во вкладку "Extensions" и перейти на "Install to URL"
+
+![Пример результата модели](https://github.com/Opetrek/Image2Image/blob/main/screens/Настройка%20SD%20ч2.png)
+
+Ссылка из скриншота выше [ControlNet](https://github.com/Mikubill/sd-webui-controlnet)
+
+Подставьте ссылку и нажмите Install. Процесс установки займёт некоторое время, после этого рекомендуется перезапустить Stable Diffusion.
+
+После этого у вас появится блок 
 
 
