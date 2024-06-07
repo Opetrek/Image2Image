@@ -75,6 +75,7 @@
 Дальше будем предварительно запускать части кода, который представляет собой поэтапное развёртывание нашего проекта.
 
 ### Предварительный запуск Stable Diffusion.
+Для запуска необходимо импортировать библиотеки webuiapi и pillow.
 ```
 import webuiapi
 from PIL import Image
@@ -108,3 +109,8 @@ r2 = api.img2img(prompt="beatiful girl",
 fidan=r2.image
 fidan.save('fidan.png')
 ```
+Что подавалось на вход в текущем примере
+![Пример результата модели](https://github.com/Opetrek/Image2Image/blob/main/screens/Запуск%20SD%20дистанционно%20ч1.jpg)
+И что сгенерировал Stable Diffusion
+![Пример результата модели](https://github.com/Opetrek/Image2Image/blob/main/screens/Запуск%20SD%20дистанц%20ч2.png)
+
