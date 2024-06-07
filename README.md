@@ -72,35 +72,39 @@
 
 ## Руководство по запуску Stable Diffusion с помощью API
 
-## txt2img
+Дальше будем предварительно запускать части кода, который представляет собой поэтапное развёртывание нашего проекта.
+
+### Предварительный запуск Stable Diffusion.
 ```
-result1 = api.txt2img(prompt="cute squirrel",
-                    negative_prompt="ugly, out of frame",
-                    seed=1003,
-                    styles=["anime"],
-                    cfg_scale=7,
-#                      sampler_index='DDIM',
-#                      steps=30,
-#                      enable_hr=True,
-#                      hr_scale=2,
-#                      hr_upscaler=webuiapi.HiResUpscaler.Latent,
-#                      hr_second_pass_steps=20,
-#                      hr_resize_x=1536,
-#                      hr_resize_y=1024,
-#                      denoising_strength=0.4,
+import webuiapi
+from PIL import Image
 
-                    )
-# images contains the returned images (PIL images)
-result1.images
+# create API client
+api = webuiapi.WebUIApi()
 
-# image is shorthand for images[0]
-result1.image
+# create API client with custom host, port
+api = webuiapi.WebUIApi(host='127.0.0.1', port=7860)
 
-# info contains text info about the api call
-result1.info
+options = {'sd_model_checkpoint': '0001softrealistic_v187xxx.safetensors [877aac4a95]'}
+api.set_options(options)
 
-# info contains paramteres of the api call
-result1.parameters
+image_path = r"C:\Users\fidan\OneDrive\Рабочий стол\imag\3.jpg"
+raw_image=Image.open(image_path).convert('RGB')
 
-result1.image
+img = raw_image
+
+unit1 = webuiapi.ControlNetUnit(input_image=img, module='canny', model='control_v11p_sd15_canny [d14c016b]', weight=0.3)
+unit2 = webuiapi.ControlNetUnit(input_image=img, module='lineart_standard', model='control_v11p_sd15_lineart [43d4be0d]', weight=0.7)
+
+r2 = api.img2img(prompt="beatiful girl",
+            images=[img],
+            width=512,
+            height=512,
+            controlnet_units=[unit1, unit2],
+            sampler_name="Euler a",
+            cfg_scale=7,
+           )
+
+fidan=r2.image
+fidan.save('fidan.png')
 ```
