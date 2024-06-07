@@ -336,6 +336,10 @@ bot.polling(none_stop=True, interval=0)
 В дальнейшем планируется исправить структуру телеграмм бота, чтобы он мог обрабатывать фотографии параллельно.
 
 ## Ссылка на телеграмм бота
-[Telegram bot](@imag2imag_bot)
+Имя телеграмм бота - @imag2imag_bot
+
+QR-код на телеграмм бота 
+![Пример результата модели](https://github.com/Opetrek/Image2Image/blob/main/screens/Телеграм%20бот.jpg)
+
 
 
