@@ -74,7 +74,14 @@
 
 Дальше будем предварительно запускать части кода, который представляет собой поэтапное развёртывание нашего проекта. 
 
+
 ### Предварительный запуск Stable Diffusion.
+
+В нашем примере используется 'sd_model_checkpoint': '0001softrealistic_v187xxx.safetensors [877aac4a95]', изначально при установке Stable Diffusion будет установлена другая модель.
+Чтобы её установить, нужно в Stability Matrix установить другой checkpoint из одноимённого раздела, скачать его из CivitAi - и переместить в "C:\Users\fidan\AppData\Roaming\StabilityMatrix\Packages\stable-diffusion-webui\models\Stable-diffusion"
+
+Код запуска SD:
+
 ```
 import webuiapi
 from PIL import Image
@@ -193,9 +200,6 @@ fidan.save('fidan.png')
     ```
 
 Этот код демонстрирует процесс настройки и использования модели для генерации изображения на основе предоставленного фото и заданного текстового описания.
-
-В нашем примере используется checkpoint: {'sd_model_checkpoint': '0001softrealistic_v187xxx.safetensors [877aac4a95]'}, изначально при установке Stable Diffusion будет установлена другая модель.
-Чтобы её установить, нужно в Stability Matrix установить другой checkpoint из одноимённого раздела, скачать его из CivitAi - и переместить в "C:\Users\fidan\AppData\Roaming\StabilityMatrix\Packages\stable-diffusion-webui\models\Stable-diffusion"
 
 Что подавалось на вход в текущем примере
 
