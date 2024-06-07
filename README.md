@@ -44,6 +44,28 @@
 
 Подставьте ссылку и нажмите Install. Процесс установки займёт некоторое время, после этого рекомендуется перезапустить Stable Diffusion.
 
-После этого у вас появится блок 
+После этого у вас появится блок ControlNet, но будут отсутствовать модели для него.
 
+![Пример результата модели](https://github.com/Opetrek/Image2Image/blob/main/screens/Настройка%20SD%20ч3.png)
 
+Для установки необходимых моделей необходимо перейти по ссылке:  [модели ControlNet](https://github.com/Mikubill/sd-webui-controlnet/wiki/Model-download)
+Там будет описано установка ControlNet и выбор моделей
+![Пример результата модели](https://github.com/Opetrek/Image2Image/blob/main/screens/Настройка%20SD%20ч4.png)
+
+На ваше усмотрение, выбирайте по весу модель ControlNet. В рамках данного проекта было выбрано модель с весами "Large".
+Выбрав любую ссылку из предложенных, вы перейдете на Hugging Face на страницу с предложенными моделями, разного типа.
+
+![Пример результата модели](https://github.com/Opetrek/Image2Image/blob/main/screens/Настройка%20SD%20ч5.png)
+
+Названия модели связаны с ControlNet в разделе ControlType.
+
+![Пример результата модели](https://github.com/Opetrek/Image2Image/blob/main/screens/Настройка%20SD%20ч5.png)
+Для первого раза рекомендуется установить модели Canny, Lineart, Depth с pth-файлами. Для ознакомления с типами ControlNet можете самостоятельно поискать в интернете или перейти на [обзор](https://www.itshneg.com/controlnet-upravlyaj-pozami-v-stable-diffusion/) для ознакомления.
+
+После скачивания, необходимо модели перетащить в папку ControlNet для работы. Путь к файлу показан ниже, при установке Stability Matrix по умолчанию.
+
+![Пример результата модели](https://github.com/Opetrek/Image2Image/blob/main/screens/Настройка%20SD%20ч7.png)
+
+После переноса файлов рекомендуется перезапустить Stable Diffusion, и у вас появятся модели с ControlNet.
+
+## Руководство по запуску Stable Diffusion с помощью API
