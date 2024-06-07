@@ -109,6 +109,92 @@ r2 = api.img2img(prompt="beatiful girl",
 fidan=r2.image
 fidan.save('fidan.png')
 ```
+
+Описание кода
+
+Этот код представляет собой пример использования библиотеки `webuiapi` для генерации изображений с использованием модели машинного обучения и библиотеки `PIL` для обработки изображений. Вот подробное описание:
+
+1. **Импорт библиотек:**
+    - Импортируется библиотека `webuiapi` для взаимодействия с API модели машинного обучения.
+    - Импортируется библиотека `PIL` для работы с изображениями.
+
+    ```python
+    import webuiapi
+    from PIL import Image
+    ```
+
+2. **Создание клиента API:**
+    - Создается клиент API для взаимодействия с сервером модели машинного обучения.
+    - Создается клиент API с указанием кастомного хоста и порта (`127.0.0.1:7860`).
+
+    ```python
+    # create API client
+    api = webuiapi.WebUIApi()
+
+    # create API client with custom host, port
+    api = webuiapi.WebUIApi(host='127.0.0.1', port=7860)
+    ```
+
+3. **Настройка параметров модели:**
+    - Устанавливаются опции для модели, включая контрольную точку модели (`sd_model_checkpoint`).
+
+    ```python
+    options = {'sd_model_checkpoint': '0001softrealistic_v187xxx.safetensors [877aac4a95]'}
+    api.set_options(options)
+    ```
+
+4. **Загрузка и обработка изображения:**
+    - Указывается путь к изображению, которое нужно загрузить.
+    - Изображение загружается и конвертируется в формат RGB с помощью `PIL`.
+
+    ```python
+    image_path = r"C:\Users\fidan\OneDrive\Рабочий стол\imag\3.jpg"
+    raw_image = Image.open(image_path).convert('RGB')
+    img = raw_image
+    ```
+
+5. **Создание блоков управления (ControlNetUnits):**
+    - Создается два блока управления:
+        - `unit1` с использованием модуля `canny` и моделью `control_v11p_sd15_canny`, с весом 0.3.
+        - `unit2` с использованием модуля `lineart_standard` и моделью `control_v11p_sd15_lineart`, с весом 0.7.
+
+    ```python
+    unit1 = webuiapi.ControlNetUnit(input_image=img, module='canny', model='control_v11p_sd15_canny [d14c016b]', weight=0.3)
+    unit2 = webuiapi.ControlNetUnit(input_image=img, module='lineart_standard', model='control_v11p_sd15_lineart [43d4be0d]', weight=0.7)
+    ```
+
+6. **Генерация изображения:**
+    - Используется метод `img2img` для генерации нового изображения на основе исходного изображения.
+    - Параметры метода включают:
+        - `prompt` - текстовый запрос, описывающий желаемое изображение ("beautiful girl").
+        - `images` - список изображений для обработки (в данном случае, одно изображение).
+        - `width` и `height` - размеры выходного изображения (512x512).
+        - `controlnet_units` - список блоков управления.
+        - `sampler_name` - имя сэмплера ("Euler a").
+        - `cfg_scale` - значение для конфигурационной шкалы (7).
+
+    ```python
+    r2 = api.img2img(
+        prompt="beautiful girl",
+        images=[img],
+        width=512,
+        height=512,
+        controlnet_units=[unit1, unit2],
+        sampler_name="Euler a",
+        cfg_scale=7,
+    )
+    ```
+
+7. **Сохранение сгенерированного изображения:**
+    - Сгенерированное изображение сохраняется с именем `fidan.png`.
+
+    ```python
+    fidan = r2.image
+    fidan.save('fidan.png')
+    ```
+
+Этот код демонстрирует процесс настройки и использования модели для генерации изображения на основе предоставленного фото и заданного текстового описания.
+
 Что подавалось на вход в текущем примере
 ![Пример результата модели](https://github.com/Opetrek/Image2Image/blob/main/screens/Запуск%20SD%20дистанционно%20ч1.jpg)
 
