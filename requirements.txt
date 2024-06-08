@@ -1,0 +1,8 @@
+telebot
+requests
+webuiapi
+transformers
+pillow
+g4f
+torch
+huggingface-hub
